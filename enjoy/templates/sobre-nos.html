@@ -1,0 +1,209 @@
+{% extends 'background.html' %}
+{% load static i18n %}
+{% block head_title %}
+    {% trans 'Sobre Nós - Enjoy Soluções' %}
+{% endblock head_title %}
+{% block content %}
+    <main>
+        <div class="banner-page sobre-banner">
+            <h1>
+                Sobre Nós
+            </h1>
+            <div class="line"></div>
+            <p><b>“Cuide dos seus pacientes, nós cuidamos do resto.”</b></p>
+            <p>
+                Nossa prioridade é simplificar sua rotina, para que você tenha mais tempo e tranquilidade.
+                Enquanto você foca em oferecer o melhor cuidado aos seus pacientes, nós garantimos que
+                todo o resto funcione sem preocupações.
+            </p>
+        </div>
+        <section class="apresentacao">
+            <img src="{% static 'img/apresentacao.webp' %}" alt="">
+            <div class="apresentacao-text text">
+                <div class="apresentacao-title">
+                    <h1>Liberdade Financeira e Contábil para Médicos</h1>
+                    <div class="line"></div>
+                </div>
+                <p>Na ENJOY, oferecemos muito mais do que gestão contábil e financeira. Oferecemos
+                    tranquilidade, liberdade e eficiência para que você, médico, possa focar no que realmente
+                    importa: cuidar dos seus pacientes. Nossa missão é simplificar e otimizar as relações
+                    financeiras entre médicos e suas instituições contratantes, garantindo uma gestão
+                    impecável.</p>
+                <p>Entendemos as demandas do setor de saúde e, por isso, desenvolvemos soluções
+                    tecnológicas e práticas que eliminam a burocracia e facilitam a rotina administrativa. Seja
+                    você um profissional autônomo ou vinculado a hospitais, clínicas ou prefeituras, nossa
+                    equipe de especialistas, formada por médicos, contadores e advogados, está pronta para
+                    entregar resultados rápidos e confiáveis.</p>
+                <p>A ENJOY nasceu para transformar o seu dia a dia. Com segurança, inovação e agilidade,
+                    cuidamos de toda a parte financeira e contábil, deixando você livre para se concentrar no
+                    crescimento da sua carreira e no cuidado com seus pacientes. Experimente a praticidade e
+                    a confiança de contar com quem realmente entende as suas necessidades.</p>
+            </div>
+        </section>
+        <section class="papel">
+            <div class="apresentacao-papel">
+                <div class="papel-text text">
+                    <div class="papel-title">
+                        <h1>Simplificação Administrativa com a Enjoy</h1>
+                        <div class="line"></div>
+                    </div>
+                    <p>Ao se tornarem associados da ENJOY, os médicos recebem seu salário líquido, sem
+                        precisar se preocupar com taxas ou processos burocráticos. Tudo isso com o respaldo de
+                        uma empresa sólida, confiável e com um alto valor agregado, que garante segurança em
+                        cada etapa.</p>
+                    <p>Para municípios, hospitais e clínicas, a ENJOY simplifica ainda mais: ao invés de lidar com
+                        a documentação de cada médico individualmente, você recebe apenas nossas certidões e
+                        uma única nota fiscal. Isso reduz custos, elimina burocracias desnecessárias e acelera o
+                        processo de pagamento. Nossa gestão é totalmente integrada, sem custos adicionais para
+                        o serviço administrativo.</p>
+                    <p>O melhor de tudo? As instituições continuam pagando o mesmo valor, e os médicos
+                        recebem a mesma remuneração, porém com a burocracia drasticamente reduzida para
+                        todos os envolvidos. Com a ENJOY, o processo é mais ágil, eficiente e sem complicações.</p>
+                </div>
+                <img src="{% static 'img/conte-conosco.jpg' %}" alt="">
+            </div>
+        </section>
+    
+        <section class="representantes">
+            <div class="representante">
+                <div class="img">
+                    <img class="img-rep" src="{% static 'img/Karoline.jpeg'%}" alt="">
+                </div>
+                <h2>Karoline Santana</h2>
+                <p>Médica com mais de 10 anos atuando na área da saúde. Oferecendo um atendimento humanizado aos pacientes. Capaz de criar planos de tratamento efetivos, com foco na atenção integral à saúde. Reconhecida pela postura empática e humanizada, além da ética e rigor no trabalho. Familiarizada com as questões burocráticas e administrativas de hospitais e Unidades de Saúde.</p>
+            </div>
+            <div class="representante segundo">
+                <div class="img">
+                    <img class="img-rep" src="{% static 'img/Tiago.webp'%}" alt="">
+                </div>
+                <h2>Tiago Brito</h2>
+                <p>Contador, pós-graduando em Direito Tributário na PUC-MG, com experiência há 13 anos, atendendo clientes por diversos estados do Brasil, atuando principalmente no desenvolvimento e crescimento das empresas, através do conhecimento das funções estratégicas que colaboram para o sucesso do negócio.</p>
+            </div>
+        </section>
+
+        <section class="principios">
+            <div class="principio">
+                <h4>Missão</h4>
+                <p>Assegurar ao médico gestão financeira de qualidade e confiabilidade. Oferecendo os melhores profissionais na área sem custos adicionais.</p>
+            </div>
+            <div class="principio">
+                <h4>Visão</h4>
+                <p>Creditar ao médico a possibilidade de aproveitar seu tempo livre sem se preocupar com a burocratização dos sistemas financeiros de maneira confiável.</p>
+            </div>
+            <div class="principio">
+                <h4>Valores</h4>
+                <p>Pensamos macro para alcançar resultados que gerem tempo de qualidade, conforto e desburocratização da vida profissional de nossos clientes.</p>
+            </div>
+        </section>
+
+        <section class="frase">
+            <div class="line"></div>
+            <p>"Nosso propósito é garantir soluções que deixam a rotina do médico mais simples e segura."</p>
+        </section>
+
+        <section class="associe">
+            <h1>Associe-se</h1>
+            <div class="line"></div>
+            <p>Quer ser um associado ENJOY e usufruir dos benefícios que deixam a rotina do médico mais simples?</p>
+            <p>Conte com a nossa equipe especializada para fazer a gestão contábil e financeira.</p>
+            <form class="form" id="form-cad" enctype="multipart/form-data" action="{% url 'associacao' %}" method="POST" role="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="container-middle">
+                    <div class="form-control">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" class="input" name="name" placeholder="Nome">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="crm">CRM/UF</label>
+                        <input type="text" id="crm" class="input" maxlength="12" minlength="12" name="crm" placeholder="CRM/UF">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                </div>
+    
+                <div class="container-middle">
+                    <div class="form-control">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" class="input" name="email" placeholder="E-mail">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" id="telefone" maxlength="14" minlength="11" class="input" name="telefone" placeholder="(ddd) 99999-9999">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                </div>
+    
+                <div class="container-middle">
+                    <div class="form-control">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" maxlength="8" minlength="8" class="input" name="cep" placeholder="CEP">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="address">Endereço</label>
+                        <input type="text" id="address" class="input" name="address" placeholder="Endereço">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                </div>
+    
+                <div class="form-control">
+                    <label for="message">Mensagem</label>
+                    <textarea name="mensagem" id="message" class="input" cols="30" rows="10"
+                        placeholder="Digite sua mensagem"></textarea>
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                    <small class="message">Mensagem de Erro</small>
+                </div>
+    
+                <div class="result">
+                    <p class="result-text">
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                    <div class="alert alert-danger">
+                                        <strong>Erro!</strong>
+                                        {{ message }}
+                                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                                    </div>
+                                {% else %}
+                                    <div class="alert alert-success">
+                                        <strong>Sucesso!</strong>
+                                        {{ message }}
+                                        <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="button-box">
+                    <button type="submit" data-button class="btn-light-green-gray">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock content%}
+{% block script %}
+    <script src="{% static 'js/open_list.js' %}"></script>
+    <script src="{% static 'js/formValidation.js' %}"></script>
+{% endblock script %}

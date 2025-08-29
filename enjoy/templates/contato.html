@@ -1,0 +1,169 @@
+{% extends 'background.html' %}
+{% load static i18n %}
+{% block head_title %}
+    {% trans 'Contato - Enjoy Soluções' %}
+{% endblock head_title %}
+{% block content %}
+    <main>
+        <div class="banner-page contato-banner">
+            <h1>
+                Contato
+            </h1>
+            <div class="line"></div>
+        </div>
+        <section class="contato">
+            <div class="info">
+                <div class="info-contato">
+                    <h3>Informações de contato</h3>
+                    <div class="line"></div>
+                    <p class="text">
+                        Entre em contato conosco e descubra como nossas soluções podem contribuir para o seu sucesso. Estamos aqui para ajudá-lo em sua jornada profissional. Vamos conversar?
+                    </p>
+                    <div class="list">
+                        <div class="contact">
+                            <img class="icon-contact" src="{% static 'img/telefone-green.png' %}" alt="">
+                            <a href="tel:+5511947973027">
+                                (11) 94797-3027
+                            </a>
+                        </div>
+                        <div class="contact">
+                            <img class="icon-contact" src="{% static 'img/whatsapp-green.png' %}" alt="">
+                            <a href="https://wa.me/5511947973027" target="_blank">
+                                (11) 94797-3027
+                            </a>
+                        </div>
+                        <div class="contact">
+                            <img class="icon-contact" src="{% static 'img/email-green.png' %}" alt="">
+                            <a href="mailto:contato@enjoysolucoes.med.br" target="_blank">
+                                contato@enjoysolucoes.med.br
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="redes-div">
+                    <h3 class="subtitle-contact">Siga  nossas redes sociais</h3>
+                    <div class="redes">
+                        <a href="https://www.instagram.com/enjoysolucoesmedicas/" target="_blank">
+                            <img class="icon-contact" src="{% static 'img/instagram-green.png' %}" alt="">
+                        </a>
+                        <a href="https://web.facebook.com/EnjoySolucoesMedicas" target="_blank">
+                            <img class="icon-contact" src="{% static 'img/facebook-green.png' %}" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/company/enjoy-solu%C3%A7%C3%B5es-m%C3%A9dicas/posts/?feedView=all" target="_blank">
+                            <img class="icon-contact" src="{% static 'img/linkedin-green.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="endereco-div">
+                    <h3 class="subtitle-contact">Endereço</h3>
+                    <div class="list">
+                        <div class="contact">
+                            <img class="icon-contact" src="{% static 'img/address-icon-green.png' %}" alt="">
+                            <a href="https://www.google.com/maps/place/Av.+Brig.+Faria+Lima,+1811+-+9%C2%BA+andar+conj.+918+-+Pinheiros,+S%C3%A3o+Paulo+-+SP,+01452-001/@-23.572985,-46.689203,16z/data=!4m6!3m5!1s0x94ce57734097420b:0x28ccbbf38296fbef!8m2!3d-23.5729127!4d-46.6888563!16s%2Fg%2F11lkycv__5?hl=pt-PT&entry=ttu" target="_blank">
+                                Av. Brigadeiro Faria Lima, 1811
+                                9º Andar, Conj 918
+                                <br>
+                                Jardim Paulistano - São Paulo/SP
+                            </a>
+                        </div>
+                        <div class="contact">
+                            <img class="icon-contact" src="{% static 'img/wall-clock-green.png' %}" alt="">
+                            <p>
+                                Horário de Funcionamento: das 8h às 17h
+                            </p>
+                        </div>
+                    </div>
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8725750091553!2d-46.69167112548709!3d-23.57301956201914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5773477f7cd1%3A0x6c38896dfa5acf7!2sAv.%20Brig.%20Faria%20Lima%2C%201811%20-%209%C2%BA%20andar%20%7C%20Conj.%20918%20-%20Jardim%20Paulistano%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001452-001!5e0!3m2!1spt-PT!2sbr!4v1718718761629!5m2!1spt-PT!2sbr" width="310" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="form-contact">
+                <h3>Entre em contato!</h3>
+                <div class="line"></div>
+                <p class="text">
+                    Insira seus dados e envie uma mensagem para falar com a gente ou tirar dúvidas.
+                </p>
+                <div class="fale-conosco">
+                    <form class="form" id="form-cad" enctype="multipart/form-data" action="{% url 'contato' %}" method="POST" role="form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="form-control">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" class="input" name="name" placeholder="Nome">
+                            <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                            <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+            
+                            <small class="message"></small>
+                        </div>
+            
+                        <div class="container-middle">
+                            <div class="form-control">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" class="input" name="email" placeholder="E-mail">
+                                <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                                <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+                
+                                <small class="message"></small>
+                            </div>
+                            <div class="form-control">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" id="telefone" maxlength="14" minlength="11" class="input" name="telefone" placeholder="(ddd) 99999-9999">
+                                <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                                <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+                
+                                <small class="message"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" id="assunto" class="input" name="assunto" placeholder="Assunto">
+                            <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                            <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+            
+                            <small class="message"></small>
+                        </div>
+            
+                        <div class="form-control">
+                            <label for="message">Mensagem</label>
+                            <textarea name="mensagem" id="message" class="input" cols="30" rows="10"
+                                placeholder="Digite sua mensagem"></textarea>
+                            <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                            <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                            <small class="message">Mensagem de Erro</small>
+                        </div>
+            
+                        <div class="result">
+                            <p class="result-text">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                            <div class="alert alert-danger">
+                                                <strong>Erro!</strong>
+                                                {{ message }}
+                                                <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                                            </div>
+                                        {% else %}
+                                            <div class="alert alert-success">
+                                                <strong>Sucesso!</strong>
+                                                {{ message }}
+                                                <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="button-box">
+                            <button type="submit" data-button class="btn-dark-blue">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content%}
+{% block script %}
+    <script src="{% static 'js/formValidation.js' %}"></script>
+{% endblock script %}

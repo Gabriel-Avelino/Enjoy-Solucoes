@@ -1,0 +1,263 @@
+{% extends 'background.html' %}
+{% load static i18n %}
+{% block head_title %}
+    {% trans 'Serviços - Enjoy Soluções' %}
+{% endblock head_title %}
+{% block content %}
+    <main>
+        <div class="banner-page servicos-banner">
+            <h1>
+                Serviços
+            </h1>
+            <div class="line"></div>
+            <p>Nosso propósito é garantir soluções que deixam a rotina do médico mais simples.</p>
+            <p>Com a ENJOY, você pode focar no que realmente é importante para atendimentos mais eficientes e deixar a burocracia com a gente!</p>
+        </div>
+        <section class="servicos">
+            <div class="container">
+                <div class="Contabilidade servico" onclick="togglePopUp()">
+                    <div class="servico-img contabilidade"></div>
+                    <div class="servico-name">
+                        <p>Contabilidade</p>
+                    </div>
+                </div>
+                <div class="Juridico servico" onclick="togglePopUp()">
+                    <div class="servico-img juridico"></div>
+                    <div class="servico-name">
+                        <p>Assessoria Jurídica</p>
+                    </div>
+                </div>
+                <div class="Alocacao servico" onclick="togglePopUp()">
+                    <div class="servico-img alocacao"></div>
+                    <div class="servico-name">
+                        <p>Alocação de Serviços</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+
+        </section>
+        <section class="abrirContabilidade popUp ocultar">
+            <div class="services-info">
+                <img src="{% static 'img/contabil.png' %}" alt="" class="middle-image">
+                <div class="middle-text">
+                    <h2>
+                        Contabilidade
+                    </h2>
+                    <div class="line"></div>
+                    <p>
+                        A ENJOY oferece gestão contábil completa para médicos recém-formados, profissionais autônomos, clínicas de pequeno, médio ou grande porte, municípios e organizações sociais.
+                    </p>
+                    <ul>
+                        <li>Emissão de Notas Fiscais</li>
+                        <li>Declaração de Imposto de Renda</li>
+                        <li>Contabilidade especializada mensal</li>
+                        <li>Controle e pagamento de tributos</li>
+                        <li>Gestão fiscal</li>
+                        <li>Repasse médico com descontos devidos de tributos</li>
+                        <li>Análise de contabilidade</li>
+                        <li>Acompanhamento online e seguro</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="abrirJuridico popUp ocultar">
+            <div class="services-info">
+                <img src="{% static 'img/consultoria-juridica.jpeg' %}" alt="" class="middle-image">
+                <div class="middle-text">
+                    <h2>
+                        Assessoria Jurídica
+                    </h2>
+                    <div class="line"></div>
+                    <p>
+                        Além das soluções financeiras e contábeis, a ENJOY conta com uma equipe jurídica especializada para atender médicos de todo o país com demandas diversas. Ao aderir ao nosso pacote de soluções, você tem à disposição toda a nossa estrutura jurídica para atender casos específicos do seu dia a dia profissional que necessitem do respaldo de profissionais capacitados.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="abrirAlocacao popUp ocultar">
+            <div class="services-info">
+                <img src="{% static 'img/alocacao.jpg' %}" alt="" class="middle-image">
+                <div class="middle-text">
+                    <h2>
+                        Alocação de Serviços
+                    </h2>
+                    <div class="line"></div>
+                    <p>
+                        Quer trabalhar em qualquer local do Brasil? Oferecemos ao associado a possibilidade de inserção ao mercado de trabalho em parceria com empresas de confiança de todo o país.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="frase">
+            <div class="line"></div>
+            <p>"Com a ENJOY, você pode focar no que realmente é importante para atendimentos mais eficientes e deixar a burocracia conosco!"</p>
+        </section>
+        <section class="duvidas">
+            <h1>Perguntas Frequentes</h1>
+            <div class="line"></div>
+            <div class="perguntas">
+                <div class="pergunta">
+                    <div id="dropdown-pergunta1" class="dropdown" onclick="toggleDropdown('pergunta1', true)">
+                        Como verificar se meus impostos estão sendo pagos corretamente?
+                        <img id="img-pergunta1" class="btn-down" src="{% static 'img/arrow-open.png' %}" alt="">
+                    </div>
+                    <div id="content-pergunta1" class="dropdown-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    </div>
+                </div>
+                <div class="pergunta">
+                    <div id="dropdown-pergunta2" class="dropdown" onclick="toggleDropdown('pergunta2', true)">
+                        Posso desistir da sociedade sem prejuízos?
+                        <img id="img-pergunta2" class="btn-down" src="{% static 'img/arrow-open.png' %}" alt="">
+                    </div>
+                    <div id="content-pergunta2" class="dropdown-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    </div>
+                </div>
+                <div class="pergunta">
+                    <div id="dropdown-pergunta3" class="dropdown" onclick="toggleDropdown('pergunta3', true)">
+                        As notas solicitadas são emitidas em quanto tempo?
+                        <img id="img-pergunta3" class="btn-down" src="{% static 'img/arrow-open.png' %}" alt="">
+                    </div>
+                    <div id="content-pergunta3" class="dropdown-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    </div>
+                </div>
+                <div class="pergunta">
+                    <div id="dropdown-pergunta4" class="dropdown" onclick="toggleDropdown('pergunta4', true)">
+                        Quanto tenho que pagar para ser associado?
+                        <img id="img-pergunta4" class="btn-down" src="{% static 'img/arrow-open.png' %}" alt="">
+                    </div>
+                    <div id="content-pergunta4" class="dropdown-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    </div>
+                </div>
+                <div class="pergunta">
+                    <div id="dropdown-pergunta5" class="dropdown" onclick="toggleDropdown('pergunta5', true)">
+                        Qual é a vantagem de eu me associar à ENJOY se posso abrir a minha própria empresa?
+                        <img id="img-pergunta5" class="btn-down" src="{% static 'img/arrow-open.png' %}" alt="">
+                    </div>
+                    <div id="content-pergunta5" class="dropdown-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    </div>
+                </div>
+                <div class="pergunta">
+                    <div id="dropdown-pergunta6" class="dropdown" onclick="toggleDropdown('pergunta6', true)">
+                        Como são realizadas as transações bancárias ?
+                        <img id="img-pergunta6" class="btn-down" src="{% static 'img/arrow-open.png' %}" alt="">
+                    </div>
+                    <div id="content-pergunta6" class="dropdown-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="associe">
+            <h1>Associe-se</h1>
+            <div class="line"></div>
+            <p>Quer ser um associado ENJOY e usufruir dos benefícios que deixam a rotina do médico mais simples?</p>
+            <p>Conte com a nossa equipe especializada para fazer a gestão contábil e financeira.</p>
+            <form class="form" id="form-cad" enctype="multipart/form-data" action="{% url 'associacao' %}" method="POST" role="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="container-middle">
+                    <div class="form-control">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" class="input" name="name" placeholder="Nome">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="crm">CRM/UF</label>
+                        <input type="text" id="crm" class="input" maxlength="12" minlength="12" name="crm" placeholder="CRM/UF">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                </div>
+    
+                <div class="container-middle">
+                    <div class="form-control">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" class="input" name="email" placeholder="E-mail">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" id="telefone" maxlength="14" minlength="11" class="input" name="telefone" placeholder="(ddd) 99999-9999">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                </div>
+    
+                <div class="container-middle">
+                    <div class="form-control">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" maxlength="8" minlength="8" class="input" name="cep" placeholder="CEP">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="address">Endereço</label>
+                        <input type="text" id="address" class="input" name="address" placeholder="Endereço">
+                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                        <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+        
+                        <small class="message"></small>
+                    </div>
+                </div>
+    
+                <div class="form-control">
+                    <label for="message">Mensagem</label>
+                    <textarea name="mensagem" id="message" class="input" cols="30" rows="10"
+                        placeholder="Digite sua mensagem"></textarea>
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                    <small class="message">Mensagem de Erro</small>
+                </div>
+    
+                <div class="result">
+                    <p class="result-text">
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                    <div class="alert alert-danger">
+                                        <strong>Erro!</strong>
+                                        {{ message }}
+                                        <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                                    </div>
+                                {% else %}
+                                    <div class="alert alert-success">
+                                        <strong>Sucesso!</strong>
+                                        {{ message }}
+                                        <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="button-box">
+                    <button type="submit" data-button class="btn-light-green-gray">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock content%}
+{% block script %}
+    <script src="{% static 'js/open_list.js' %}"></script>
+    <script src="{% static 'js/services.js' %}"></script>
+    <script src="{% static 'js/formValidation.js' %}"></script>
+{% endblock script %}

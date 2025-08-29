@@ -1,0 +1,239 @@
+{% extends 'background.html' %}
+{% load static i18n %}
+{% block head_title %}
+    {% trans 'Home - Enjoy Soluções' %}
+{% endblock head_title %}
+{% block content %}
+<main>
+    <div class="banner-inicial">
+        <h1>
+            Gestão Médica Inteligente, Simplificação Administrativa e Remuneração Líquida Assegurada
+        </h1>
+    </div>
+    <section class="quem_somos">
+        <div class="grafismo">
+            <img src="{% static 'img/Grafismo.png' %}" alt="">
+        </div>
+        <div class="equipe">
+            <img class="equipe-img" src="{% static 'img/equipe.jpg' %}" alt="">
+        </div>
+        <div class="quem-text text">
+            <h1>Quem Somos?</h1>
+            <p>Oferecemos gestão contábil e financeira completa como o objetivo de melhorar as relações financeiras entre médicos contratados e suas instituições contratantes.</p>
+            <p>Atentando às necessidades de médicos, prefeituras, hospitais e clínicas, propomos soluções práticas, tecnológicas e confiáveis que diminuem a burocracia das relações financeiras.</p>
+            <p>Contamos com profissionais especializados para deixar a rotina do médico cada vez mais prática.</p>
+            <button class="btn-dark-green-gray" onclick='window.location.href="{% url "sobre-nos" %}"'>Saiba Mais +</button>
+        </div> 
+    </section>
+
+    <section class="representantes">
+        <div class="representante">
+            <div class="img">
+                <img class="img-rep" src="{% static 'img/Karoline.jpeg'%}" alt="">
+            </div>
+            <h2>Karoline Santana</h2>
+            <p>Médica com mais de 10 anos atuando na área da saúde. Oferecendo um atendimento humanizado aos pacientes. Capaz de criar planos de tratamento efetivos, com foco na atenção integral à saúde. Reconhecida pela postura empática e humanizada, além da ética e rigor no trabalho. Familiarizada com as questões burocráticas e administrativas de hospitais e Unidades de Saúde.</p>
+        </div>
+        <div class="representante segundo">
+            <div class="img">
+                <img class="img-rep" src="{% static 'img/Tiago.webp'%}" alt="">
+            </div>
+            <h2>Tiago Brito</h2>
+            <p>Contador, pós-graduando em Direito Tributário na PUC-MG, com experiência há 13 anos, atendendo clientes por diversos estados do Brasil, atuando principalmente no desenvolvimento e crescimento das empresas, através do conhecimento das funções estratégicas que colaboram para o sucesso do negócio.</p>
+        </div>
+    </section>
+
+    <section class="servicos">
+        <h1>Serviços</h1>
+        <div class="line"></div>
+        <p>Nosso propósito é garantir soluções que deixam a rotina do médico mais simples e segura.</p>
+        <div class="container">
+            <div class="servico">
+                <div class="servico-img contabilidade"></div>
+                <div class="servico-name">
+                    <p>Contabilidade</p>
+                </div>
+            </div>
+            <div class="servico">
+                <div class="servico-img juridico"></div>
+                <div class="servico-name">
+                    <p>Assessoria Jurídica</p>
+                </div>
+            </div>
+            <div class="servico">
+                <div class="servico-img alocacao"></div>
+                <div class="servico-name">
+                    <p>Alocação de Serviços</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn-green-gray" onclick='window.location.href="{% url "servicos" %}"'>Conheça nossos Serviços</button>
+    </section>
+
+    <section class="beneficios">
+        <div class="beneficios-text">
+            <h1>Parcerias Celebradas</h1>
+            <div class="line"></div>
+            <div class="container">
+                <button class="arrow-left control" aria-label="Previous image"> 
+                    <div class="arrow-img-container">
+                        <img class="arrow-img" src="{% static 'img/arrow-left.png' %}" alt="">
+                    </div>
+                </button>
+                <button class="arrow-right control" aria-label="Next image">
+                    <div class="arrow-img-container">
+                        <img class="arrow-img" src="{% static 'img/arrow-right.png' %}" alt="">
+                    </div>
+                </button>
+                <div class="galery-wrapper">
+                    <div class="galery">
+                        {% for parceria in parcerias %}
+                            <div class="item {% if forloop.first %}current-item{% endif %}">
+                                <img class="thumb" src="/media/{{ parceria.logo  }}" alt="">
+                                <h4>{{ parceria.name }}</h4>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+    <section class="noticias">
+        <h1>Notícias</h1>
+        <div class="line"></div>
+        {% if noticias%}
+        <div class="carrossel">
+            <button class="arrow-left control2" aria-label="Previous image"> 
+                <div class="arrow-img-container">
+                    <img class="arrow-img" src="{% static 'img/arrow-left.png' %}" alt="">
+                </div>
+            </button>
+            <button class="arrow-right control2" aria-label="Next image">
+                <div class="arrow-img-container">
+                    <img class="arrow-img" src="{% static 'img/arrow-right.png' %}" alt="">
+                </div>
+            </button>
+            <div class="galery-wrapper2">
+                <div class="galery2">
+                    {% for noticia in noticias %}
+                        <a href="{% url 'noticia' noticia.id %}" class="noticia item2 {% if forloop.first %}current-item2{% endif %}">
+                            <img class="thumb" src="/media/{{ noticia.foto  }}" alt="">
+                            <h4>{{ noticia.titulo}}</h4>
+                            <p>{{ noticia.criado_em|date:"d M Y H:i" }}</p>
+                            <p>{{ noticia.autor }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <h4 class="aviso">Não há notícias no momento</h4>
+        {% endif %}
+    </section>
+    <section class="associe">
+        <h1>Associe-se</h1>
+        <div class="line"></div>
+        <p>Quer ser um associado ENJOY e usufruir dos benefícios que deixam a rotina do médico mais simples?</p>
+        <p>Conte com a nossa equipe especializada para fazer a gestão contábil e financeira.</p>
+        <form class="form" id="form-cad" enctype="multipart/form-data" action="{% url 'associacao' %}" method="POST" role="form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="container-middle">
+                <div class="form-control">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" class="input" name="name" placeholder="Nome">
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+    
+                    <small class="message"></small>
+                </div>
+                <div class="form-control">
+                    <label for="crm">CRM/UF</label>
+                    <input type="text" id="crm" class="input" maxlength="12" minlength="12" name="crm" placeholder="CRM/UF">
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+    
+                    <small class="message"></small>
+                </div>
+            </div>
+
+            <div class="container-middle">
+                <div class="form-control">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" class="input" name="email" placeholder="E-mail">
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+    
+                    <small class="message"></small>
+                </div>
+                <div class="form-control">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" maxlength="14" minlength="11" class="input" name="telefone" placeholder="(ddd) 99999-9999">
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+    
+                    <small class="message"></small>
+                </div>
+            </div>
+
+            <div class="container-middle">
+                <div class="form-control">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" maxlength="8" minlength="8" class="input" name="cep" placeholder="CEP">
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+    
+                    <small class="message"></small>
+                </div>
+                <div class="form-control">
+                    <label for="address">Endereço</label>
+                    <input type="text" id="address" class="input" name="address" placeholder="Endereço">
+                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                    <i class="fa-solid fa-circle-check icon-success" style="color: #328146;"></i>
+    
+                    <small class="message"></small>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="message">Mensagem</label>
+                <textarea name="mensagem" id="message" class="input" cols="30" rows="10"
+                    placeholder="Digite sua mensagem"></textarea>
+                <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                <small class="message">Mensagem de Erro</small>
+            </div>
+
+            <div class="result">
+                <p class="result-text">
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                <div class="alert alert-danger">
+                                    <strong>Erro!</strong>
+                                    {{ message }}
+                                    <i class="fa -solid fa-circle-exclamation icon-error" style="color: #b00c0c;"></i>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-success">
+                                    <strong>Sucesso!</strong>
+                                    {{ message }}
+                                    <i class="fa-solid fa-circle-check icon-success hidden" style="color: #328146;"></i>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </p>
+            </div>
+            <div class="button-box">
+                <button type="submit" data-button class="btn-light-green-gray">Enviar</button>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock content%}
+{% block script %}
+    <script src="{% static 'js/carrossel.js' %}"></script>
+    <script src="{% static 'js/news_carousel.js' %}"></script>
+    <script src="{% static 'js/formValidation.js' %}"></script>
+{% endblock script %}

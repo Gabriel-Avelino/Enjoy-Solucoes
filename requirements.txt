@@ -1,0 +1,16 @@
+bleach==3.3.1
+Django==1.11
+django-decouple==2.1
+django-rest-framework==0.1.0
+django-summernote==0.8.11.6
+django-wsgi==1.0b1
+djangorestframework==3.8.2
+flup==1.0.3
+packaging==20.9
+Pillow==7.1.2
+pyparsing==2.4.7
+pytz==2025.2
+six==1.10.0
+sqlparse==0.4.4
+webencodings==0.5.1
+WebOb==1.8.9

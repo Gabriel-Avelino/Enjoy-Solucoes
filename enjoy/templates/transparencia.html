@@ -1,0 +1,32 @@
+{% extends 'background.html' %}
+{% load static i18n %}
+{% block head_title %}
+    {% trans 'Transparência - Enjoy Soluções' %}
+{% endblock head_title %}
+{% block content %}
+    <main>
+        <div class="banner-page transparencia-banner">
+            <h1>
+                Transparência
+            </h1>
+            <div class="line"></div>
+        </div>
+        <section class="documentos">
+            {% if documentos %}
+                {% for tipo, documents in documentos %}
+                    <div id="dropdown-{{ tipo }}" class="dropdown" onclick="toggleDropdown('{{ tipo }}')">
+                        + {{ tipo }}
+                    </div>
+                    <div id="content-{{ tipo }}" class="dropdown-content">
+                        {% for documento in documents %}
+                            <a class="doc-link" target="_blank" href="{{ documento.file.url }}">{{ documento.name_doc }}</a>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </section>
+    </main>
+{% endblock content %}
+{% block script %}
+    <script src="{% static 'js/open_list.js' %}"></script>
+{% endblock script %}
